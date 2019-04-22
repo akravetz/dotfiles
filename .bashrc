@@ -1,4 +1,3 @@
-
 files=(".bashrc.devoted" ".bash_profile")
 for f in ${files[@]}; do
 	if [ -f "${HOME}/$f" ]; then
@@ -40,6 +39,13 @@ function _love_pwd() {
   fi
 }
 
+newbranch() {
+  git checkout master
+  git pull
+  git checkout -b $1
+  git push --set-upstream origin $1
+}
+
 PROMPT_COMMAND='PS1="$(add_venv_info)${debian_chroot:+($debian_chroot)}\[\033[01;34m\]$(_love_pwd)\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "'
 tmux source-file ~/.tmux.conf
 
@@ -74,12 +80,7 @@ alias stagepsql='psql -h redshift.staging.devoted.com -U dbadmin staging'
 alias prodpsql='psql -h redshift.devoted.com -U dbadmin prod'
 alias prp='PIPENV_PIPFILE=$CORE/analytics/Pipfile pipenv run python'
 export VAULT_TOKEN=$(cat /srv/durable/akravetz/.vault-token-prod)
+
+
 eval "$(direnv hook bash)"
 direnv allow $CORE/analytics
-
-newbranch() {
-  git checkout master
-  git pull
-  git checkout -b $1
-  git push --set-upstream origin $1
-}
