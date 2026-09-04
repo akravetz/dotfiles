@@ -10,3 +10,8 @@ else
   echo "Oh My Zsh is already installed."
 fi
 ln -sf "${PWD}/.zshrc" "${HOME}/.zshrc"
+
+mkdir -p "${HOME}/.agents/skills"
+ln -sfn \
+  "${PWD}/.agents/skills/assumption-release" \
+  "${HOME}/.agents/skills/assumption-release"
