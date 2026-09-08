@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement Plan"
+  short_description: "Execute plans in verified, recoverable milestones"
+  default_prompt: "Use $implement-plan to carry out the existing plan, verify each milestone, and keep its progress current."

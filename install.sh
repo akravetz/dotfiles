@@ -15,3 +15,6 @@ mkdir -p "${HOME}/.agents/skills"
 ln -sfn \
   "${PWD}/.agents/skills/assumption-release" \
   "${HOME}/.agents/skills/assumption-release"
+ln -sfn \
+  "${PWD}/.agents/skills/implement-plan" \
+  "${HOME}/.agents/skills/implement-plan"
