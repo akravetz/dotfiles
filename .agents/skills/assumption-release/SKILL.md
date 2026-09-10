@@ -19,6 +19,8 @@ For guards and fallbacks, identify a reachable production case. Distinguish stat
 
 Produce a short, ranked list of simplifying assumptions with the largest expected reduction in total implementation and maintenance complexity. For each assumption, state what must be true, whether evidence or an earlier user decision already confirms it, the concrete code and operational machinery it would remove, and any behavior, risk, or work transferred elsewhere.
 
+Actively identify operational guarantees that could replace application complexity, such as import cadence, manual prework, correction-and-rerun procedures, single-source constraints, or operator ownership conventions. Present these as assumptions to confirm, state the code each would remove, and make any transferred operational burden explicit.
+
 Phrase each high-leverage unverified assumption as a direct factual question for the user. Ask only questions that repository or operational evidence cannot answer, and do not re-ask decisions already established in the conversation.
 
 Before applying an unverified simplifying assumption, pause for the user's answer unless the user explicitly requested autonomous judgment. If all useful assumptions are already confirmed, say so explicitly and continue without an unnecessary pause.
