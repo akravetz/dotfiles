@@ -15,6 +15,14 @@ Read accepted decisions, released constraints, and the intended lifetime of this
 
 For guards and fallbacks, identify a reachable production case. Distinguish states a generic API permits from states its actual callers produce. Check what defaults and pending results cause, and which guarantees an upstream boundary already enforces. Separate normal absence from violated guarantees.
 
+## Release assumptions
+
+Produce a short, ranked list of simplifying assumptions with the largest expected reduction in total implementation and maintenance complexity. For each assumption, state what must be true, whether evidence or an earlier user decision already confirms it, the concrete code and operational machinery it would remove, and any behavior, risk, or work transferred elsewhere.
+
+Phrase each high-leverage unverified assumption as a direct factual question for the user. Ask only questions that repository or operational evidence cannot answer, and do not re-ask decisions already established in the conversation.
+
+Before applying an unverified simplifying assumption, pause for the user's answer unless the user explicitly requested autonomous judgment. If all useful assumptions are already confirmed, say so explicitly and continue without an unnecessary pause.
+
 ## Find deletions
 
 Examine whether separate modes, outcomes, events, representations, or owners need distinct behavior. Consider using the normal workflow or an existing default. Check actual consumers before preserving customization, expanding behavior, or introducing compatibility work. An implementation constraint may be changeable without a new UI, API, or operating procedure.
